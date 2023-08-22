@@ -32,6 +32,7 @@ i2cfunc.o : ${LIB_PATH}i2cfunc.c ${LIB_PATH}i2cfunc.h
 	gcc -c ${LIB_PATH}i2cfunc.c -o ${LIB_PATH}i2cfunc.o
 
 install :  
+ifndef locatie
 	rm -f /usr/local/include/BBBiolib.h
 	cp ${LIB_PATH}libiobb.a /usr/local/lib
 	cp ${LIB_PATH}BBBiolib.h /usr/local/include/iobb.h
@@ -40,7 +41,16 @@ install :
 	cp ${LIB_PATH}BBBiolib_PWMSS.h /usr/local/include
 	cp ${LIB_PATH}i2cfunc.h /usr/local/include
 	ln -s /usr/local/include/iobb.h /usr/local/include/BBBiolib.h
-
+else
+	rm -f $(locatie)/usr/local/include/BBBiolib.h
+	cp ${LIB_PATH}libiobb.a $(locatie)/usr/local/lib
+	cp ${LIB_PATH}BBBiolib.h $(locatie)/usr/local/include/iobb.h
+	cp ${LIB_PATH}BBBiolib_ADCTSC.h $(locatie)/usr/local/include
+	cp ${LIB_PATH}BBBiolib_McSPI.h $(locatie)/usr/local/include
+	cp ${LIB_PATH}BBBiolib_PWMSS.h $(locatie)/usr/local/include
+	cp ${LIB_PATH}i2cfunc.h $(locatie)/usr/local/include
+	ln -s /usr/local/include/iobb.h $(locatie)/usr/local/include/BBBiolib.h
+endif
 	
 
 #---------------------------------------------------
