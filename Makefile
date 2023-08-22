@@ -33,6 +33,7 @@ i2cfunc.o : ${LIB_PATH}i2cfunc.c ${LIB_PATH}i2cfunc.h
 
 install :  
 ifndef locatie
+	$(info locatie is [${locatie}])
 	rm -f /usr/local/include/BBBiolib.h
 	cp ${LIB_PATH}libiobb.a /usr/local/lib
 	cp ${LIB_PATH}BBBiolib.h /usr/local/include/iobb.h
@@ -42,6 +43,7 @@ ifndef locatie
 	cp ${LIB_PATH}i2cfunc.h /usr/local/include
 	ln -s /usr/local/include/iobb.h /usr/local/include/BBBiolib.h
 else
+	$(info locatie is [${locatie}])
 	rm -f $(locatie)/usr/local/include/BBBiolib.h
 	mkdir -p $(locatie)/usr/local/lib
 	mkdir -p $(locatie)/usr/local/include
