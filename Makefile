@@ -43,6 +43,8 @@ ifndef locatie
 	ln -s /usr/local/include/iobb.h /usr/local/include/BBBiolib.h
 else
 	rm -f $(locatie)/usr/local/include/BBBiolib.h
+	mkdir -p $(locatie)/usr/local/lib
+	mkdir -p $(locatie)/usr/local/include
 	cp ${LIB_PATH}libiobb.a $(locatie)/usr/local/lib
 	cp ${LIB_PATH}BBBiolib.h $(locatie)/usr/local/include/iobb.h
 	cp ${LIB_PATH}BBBiolib_ADCTSC.h $(locatie)/usr/local/include
