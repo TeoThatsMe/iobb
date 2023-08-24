@@ -53,7 +53,7 @@ else
 	cp ${LIB_PATH}BBBiolib_McSPI.h $(locatie)/usr/local/include
 	cp ${LIB_PATH}BBBiolib_PWMSS.h $(locatie)/usr/local/include
 	cp ${LIB_PATH}i2cfunc.h $(locatie)/usr/local/include
-	ln -s $(locatie)/usr/local/include/iobb.h $(locatie)/usr/local/include/BBBiolib.h
+	cp $(locatie)/usr/local/include/iobb.h $(locatie)/usr/local/include/BBBiolib.h
 endif
 	
 
